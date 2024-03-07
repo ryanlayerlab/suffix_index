@@ -26,6 +26,16 @@ def get_args():
 def build_suffix_array(T):
     tree = suffix_tree.build_suffix_tree(T)
     # Your code here
+
+    #defs
+    stack = [0]
+    while stack:
+        node_idx = stack.pop()
+        for child in tree[node_idx][CHILDREN]:
+            stack.append(child)
+
+
+
     return None
 
 
